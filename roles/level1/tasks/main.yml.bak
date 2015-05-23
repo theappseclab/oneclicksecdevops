@@ -1,0 +1,12 @@
+---
+- name: Get All Interfaces
+  command: /sbin/ifconfig -a
+  register: bar
+#  command: echo {{ hackday }}
+#  register: foo
+
+#- debug: msg="{{ foo.stdout }}"
+#- debug: msg="{{ foo.stderr }}"
+- debug: msg="{{ bar.stdout }}"
+- debug: msg="{{ bar.stderr }}"
+
