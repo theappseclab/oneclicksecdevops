@@ -2,3 +2,5 @@
 # Variables we will need
 hackday: InMobiHackday
 systemuser: vagrant
+repository: https://github.com/sullo/nikto://github.com/sullo/nikto.git 
+target: http://192.168.1.222/dvwa

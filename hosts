@@ -3,3 +3,12 @@ test.hackday
 
 [prod]
 prod.hackday
+
+[scanner]
+192.168.1.120
+
+[dbserver]
+
+[appserver]
+
+

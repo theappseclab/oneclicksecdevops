@@ -1,11 +1,11 @@
 ---
 - name: Secure servers based on level given and its objectives
-  hosts: test
+  hosts: scanner
   user: vagrant
   # remote_user: user
   sudo: yes
 
   roles:
-    - level1
+    - nikto
 #    - level2
 #    - level3 

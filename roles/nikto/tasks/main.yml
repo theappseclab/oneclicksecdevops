@@ -1,0 +1,28 @@
+---
+   - name: install git on scanner
+     apt: pkg={{item}} state=installed update_cache=yes
+     with_items:
+     - git
+     - git-man 
+     - liberror-perl
+     register: install_git_output
+
+   - name: update cache
+     apt: update_cache=yes
+ 
+   - name: Get Nikto from git
+     git: repo=git://github.com/sullo/nikto.git dest=/opt/nikto
+     register: nikto_output
+  
+   - name: Run Nikto
+     command: /usr/bin/perl /opt/nikto/program/nikto.pl -h {{ target }} -output /home/vagrant/report.txt 
+
+     register: nikto_results
+   
+   - name: Copy pentest report to /home/san/nikto_reports
+     fetch: src=/home/vagrant/report.txt dest=/home/san/nikto_reports 
+
+#   - debug: msg={{ install_git_output.stdout }}
+#   - debug: msg={{ nikto_output.stdout }}
+   - debug: msg={{ nikto_results.stdout }}
+
