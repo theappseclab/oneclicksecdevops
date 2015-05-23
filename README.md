@@ -10,7 +10,7 @@ Once the above is complete, we will attempt to work on incorporating security to
 We would like to have 3 levels of hardening to be done for provisioning of servers. Each Level can be mapped to a role. 
 
 ### The App Sec Lab Team
-![@makash](https://twitter.com/makash) and ![@jubbaonjeans](https://twitter.com/jubbaonjeans)
+[@makash](https://twitter.com/makash) and [@jubbaonjeans](https://twitter.com/jubbaonjeans)
 
 
 ### Ideas for Improvement
