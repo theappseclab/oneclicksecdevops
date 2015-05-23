@@ -1,12 +1,7 @@
 ---
-- name: Get All Interfaces
-  command: /sbin/ifconfig -a
-  register: ifconfig_output
+- name: Hardened SSH Configuration 
+  template: src=sshd_config dest=/etc/ssh/sshd_config
 
-- name: Get All Services Listening on interfaces
-  command: netstat -nltpu
-  register: netstat_output
-
-- debug: msg="{{ ifconfig_output.stdout }}"
-- debug: msg="{{ netstat_output.stdout }}"
+- name: Change ownership of SSH Configuration File
+  file: path=/etc/ssh/sshd_config owner=root group=root mode=0644 state=file
 
