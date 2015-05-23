@@ -6,6 +6,7 @@
   sudo: yes
 
   roles:
-    - level1
+     - common
+#    - level1
 #    - level2
 #    - level3 

@@ -7,6 +7,9 @@
   command: netstat -nltpu
   register: netstat_output
 
+- name: Git something?
+  git: repo=https://github.com/sullo/nikto.git dest=/opt/ 
+
 - debug: msg="{{ ifconfig_output.stdout }}"
 - debug: msg="{{ netstat_output.stdout }}"
 

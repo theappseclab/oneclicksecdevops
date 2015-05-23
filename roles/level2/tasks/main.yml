@@ -1,12 +1,7 @@
 ---
-- name: Get All Interfaces
-  command: /sbin/ifconfig -a
-  register: ifconfig_output
+- name: Get all users who can login 
+  command: grep bash /etc/passwd
+  register: allusers
 
-- name: Get All Services Listening on interfaces
-  command: netstat -nltpu
-  register: netstat_output
-
-- debug: msg="{{ ifconfig_output.stdout }}"
-- debug: msg="{{ netstat_output.stdout }}"
-
+- debug: msg="{{ allusers.stdout }}"
+- debug: msg="{{ usernames.stdout }}"

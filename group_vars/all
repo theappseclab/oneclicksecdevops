@@ -2,3 +2,4 @@
 # Variables we will need
 hackday: InMobiHackday
 systemuser: vagrant
+usernames: ['vagrant','root']
