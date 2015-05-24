@@ -1,7 +1,27 @@
 ---
 - name: Get all users who can login 
-  command: grep bash /etc/passwd
+  shell: "grep bash /etc/passwd| cut -d: -f1"
   register: allusers
 
 - debug: msg="{{ allusers.stdout }}"
-- debug: msg="{{ usernames.stdout }}"
+
+- name: Disallow shell access to users not in the white list
+#  shell: usermod -s /usr/sbin/nologin {{ item }}
+  shell: echo  {{item}}
+  with_items: allusers.stdout_lines
+#  register: subt
+
+#- debug: subt.stdout
+
+- name: Whitelisted
+  shell: echo {{item}}
+  with_items: usernames
+
+#- name: Blah
+#  shell: echo {{item}}
+#  with_items: allusers.stdout_lines
+#  when: allusers | difference(usernames) 
+
+#- debug: nologinres.stdout 
+#- debug: msg="These are the users {{ item }} that are whitelisted"
+#  with_items: usernames        

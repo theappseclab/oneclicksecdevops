@@ -1,4 +1,4 @@
-## One Click Sec Dev Ops
+## 1Click DevOpsSec
 
 DevOps tries to ensure all teams involved (dev,ops,security etc) collaborate effectively. In the day and age of multiple deployments per day, Security often becomes a bottleneck. Our solutions aims to assist dev teams to incorporate security into every piece of the puzzle to ensure Security issues are found and dealt with early. 
 
