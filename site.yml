@@ -2,11 +2,9 @@
 - name: Secure servers based on level given and its objectives
   hosts: test
   user: vagrant
-  # remote_user: user
   sudo: yes
 
   roles:
-     #- common
     - { role: level1, when: level == 'l1' }
     - { role: level2, when: level == 'l2' }
     - { role: level3, when: level == 'l3' }

@@ -5,17 +5,17 @@
 
 - debug: msg="{{ allusers.stdout }}"
 
-- name: Disallow shell access to users not in the white list
+#- name: Disallow shell access to users not in the white list
 #  shell: usermod -s /usr/sbin/nologin {{ item }}
-  shell: echo  {{item}}
-  with_items: allusers.stdout_lines
+#  shell: echo  {{item}}
+#  with_items: allusers.stdout_lines
 #  register: subt
 
 #- debug: subt.stdout
 
-- name: Whitelisted
-  shell: echo {{item}}
-  with_items: usernames
+#- name: Whitelisted
+#  shell: echo {{item}}
+#  with_items: usernames
 
 #- name: Blah
 #  shell: echo {{item}}

@@ -1,0 +1,12 @@
+---
+- name: Kernel Networking Hardening Parameters
+  shell: "sysctl -a"
+  register: kernelp
+
+- name: List all params
+  shell: echo {{item}}
+  with_items: kernelp.stdout_lines
+  when: item.stdout.find('redirects') != -1
+
+#- debug: msg= "{{item}}"
+#  with_items: kernelp.stdout_lines
